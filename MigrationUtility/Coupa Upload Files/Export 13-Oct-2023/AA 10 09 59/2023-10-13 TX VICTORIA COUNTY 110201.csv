@@ -1,9 +1,0 @@
-Invoice,Invoice Number,Supplier Number,Invoice Date,Submit for Approval?,Handling Amount,Misc Amount,Shipping Amount,Line Level Taxation,Requester Email,Chart of Accounts,Currency,Image Scan Filename,Type of Document,Purchasing Organization,Remit To Code,Type of Invoice
-invoice Line,Invoice Number,Supplier Number,Description,Price,Account Segment 1,Account Segment 2,Account Segment 3,Account Segment 4,Account Segment 5,Account Segment 6,Account Segment 7,Account Segment 8,Account Segment 9,Commodity Name,
-Invoice,BPT110201x44936,0000110201,2023-01-10,No,,,,No,liz.williams@messer-us.com,US40,USD,,Invoice,,0000110201,Taxes
-Invoice Line,BPT110201x44936,0000110201,2343403012211,$95.5300,Z ,0000106213,,,,No WBS,Property Tax,,09-04-05,09-04-05,
-Invoice Line,BPT110201x44936,0000110201,2343413012211,$186.7600,Z ,0000106213,,,,No WBS,Property Tax,,09-04-05,09-04-05,
-Invoice Line,BPT110201x44936,0000110201,2730166012211,$750.7200,K ,0000502501,0030405900,,,No WBS,Property Tax,,09-04-05,09-04-05,
-Invoice Line,BPT110201x44936,0000110201,8403024012211,$595.2800,K ,0000502501,0030405900,,,No WBS,Property Tax,,09-04-05,09-04-05,
-Invoice Line,BPT110201x44929,0000110201,9999012211,$2537.2600,Z ,0000114601,,,,No WBS,Property Tax,,09-04-05,09-04-05,
-Invoice Line,BPT110201x44929,0000110201,9999012211,$100.8100,Z ,0000114601,,,,No WBS,Property Tax,,09-04-05,09-04-05,

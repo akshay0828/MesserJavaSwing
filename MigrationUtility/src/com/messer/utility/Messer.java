@@ -102,7 +102,7 @@ public class Messer {
         // Create a JFrame (the main window)
         JFrame frame = new JFrame(" Messer Tax Department ");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 800);
+        frame.setSize(900, 900);
         JScrollPane scrollPane = new JScrollPane(panel);
         
      // Set the preferred size of the scroll pane (if needed)
@@ -457,7 +457,7 @@ panel.revalidate();
                         panel.add(deleteButton, gbc);
 
                         frame.pack(); // Adjust the frame size
-                        frame.setSize(800, 800);
+                        frame.setSize(900, 900);
                         deleteButtons.put(column, deleteButton);
 
                     // Add an action listener to the "Delete" button
@@ -836,7 +836,18 @@ if(selectedColumnName == null ) {
                         	 JOptionPane.showMessageDialog(frame, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
                            return;
                         	 // e1.printStackTrace();
-                        }
+                        }catch (Exception e2) {
+							// TODO: handle exception
+                        	e2.printStackTrace();
+                        	progressBar.setVisible(false);
+                          	 stopProgress();
+                           	// Revalidate and repaint the panel to update the layout
+                                panel.revalidate();
+                                panel.repaint();
+                           	 JOptionPane.showMessageDialog(frame, "Error during exporting CSV's.", "Error", JOptionPane.ERROR_MESSAGE);
+                              return;
+						}
+                        
 
                     } catch (SQLException z) {
                     	progressBar.setVisible(false);

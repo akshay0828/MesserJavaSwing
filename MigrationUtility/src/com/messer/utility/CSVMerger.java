@@ -45,10 +45,24 @@ public class CSVMerger {
                 int index = modifiedLines.size() - 1;
                 String[] existingParts = modifiedLines.get(index).split(",");
                 //System.out.println(existingParts[4]+"  price   "+parts[4]);
-                if(!existingParts[4].isEmpty()|| ! parts[4].isEmpty()) {
-                BigDecimal totalPrice = new BigDecimal(parts[4]);
+                if(!existingParts[4].isEmpty() || ! parts[4].isEmpty()) {
+                	BigDecimal totalPrice;
+                	try {
+                 totalPrice = new BigDecimal(parts[4]);
+                	}
+                	catch (NumberFormatException e) {
+						// TODO: handle exception
+                		 totalPrice = new BigDecimal(0);
+					}
                 if(!existingParts[4].isEmpty()) {
-                BigDecimal existingPrice = new BigDecimal(existingParts[4]);
+                BigDecimal existingPrice ;
+                try {
+                	existingPrice = new BigDecimal(existingParts[4]);
+                	
+                }catch (NumberFormatException e) {
+                	existingPrice = new BigDecimal(0);
+				}
+                
                 BigDecimal updatedPrice = existingPrice.add(totalPrice);
                 existingParts[4] = updatedPrice.toString();
                 }else {
@@ -138,7 +152,7 @@ public class CSVMerger {
                     modifiedLine = String.join(",", parts);
                 }
 
-                System.out.println(modifiedLine);
+             //   System.out.println(modifiedLine);
 
                 writer.write(modifiedLine);
                 writer.newLine();
@@ -148,7 +162,7 @@ public class CSVMerger {
         
         }
 
-        System.out.println("File processing complete.");
+      //  System.out.println("File processing complete.");
 	}
 }
 

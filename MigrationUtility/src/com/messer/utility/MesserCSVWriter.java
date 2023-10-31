@@ -123,8 +123,16 @@ public class MesserCSVWriter {
 	        isFirstIteration= !paytovalues.contains(payToValue);
 	        paytovalues.add(payToValue);
 	        final String exportPath = mainProperties.getProperty("messer.exportcsv.csv.export.path");
+	        final String exportPathPart2 = mainProperties.getProperty("messer.exportcsv.csv.export.path.part2");
 	     // Create a folder with the current date
+	        
+	        if(selectedValue == 1) {
 	         folderPath = "./"+exportPath+"/" + "Export " + folderDate+"/"+initiatedByValue+" "+formattedTime;
+	        }else if(!exportPathPart2.isEmpty()){
+	        	 folderPath = "./"+exportPath+"/" + "Export " + folderDate+"/"+initiatedByValue+" "+formattedTime+" "+exportPathPart2;
+	        }else {
+	        	folderPath = "./"+exportPath+"/" + "Export " + folderDate+"/"+initiatedByValue+" "+formattedTime;
+	        }
 	        File folder = new File(folderPath);
 	        folder.mkdirs();
 
@@ -283,7 +291,6 @@ CSVMerger csvMerger = new CSVMerger();
             for (File file : files) {
                 if (file.isFile() && file.getName().endsWith(".csv")) {
                     String filePath = file.getAbsolutePath();
-                    System.out.println(filePath);
                     csvMerger.mergepart2(filePath);
                 }
             }
